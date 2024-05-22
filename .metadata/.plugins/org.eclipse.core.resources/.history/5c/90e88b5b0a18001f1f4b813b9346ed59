@@ -1,0 +1,5 @@
+package com.mx.mascotas.config;
+
+public class RestTemplateConfig {
+
+}

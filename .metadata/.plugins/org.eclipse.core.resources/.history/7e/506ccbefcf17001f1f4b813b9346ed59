@@ -1,0 +1,13 @@
+package com.mx.mascotas.model;
+
+public class Mascotas {
+
+	private int idMascota;
+	private String nombre;
+	private String raza;
+	private int edad;
+	private String razonCita;
+	private int idCliente;
+	private int idResponsable;
+	private int idVeterinaria;
+}   

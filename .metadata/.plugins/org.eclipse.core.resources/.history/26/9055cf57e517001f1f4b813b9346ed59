@@ -1,0 +1,10 @@
+package com.mx.responsables.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="RESPONSABLES")
+public class Responsable {
+
+}

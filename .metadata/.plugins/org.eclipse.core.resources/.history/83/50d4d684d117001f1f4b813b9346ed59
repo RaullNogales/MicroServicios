@@ -1,0 +1,5 @@
+package com.mx.mascotas.service;
+
+public class MascotasService {
+
+}

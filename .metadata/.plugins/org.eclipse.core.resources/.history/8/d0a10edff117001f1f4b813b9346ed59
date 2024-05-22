@@ -1,0 +1,21 @@
+package com.mx.Veterinaria.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Entity
+@Table(name="VETERINARIA")
+@Data
+public class Veterinaria {
+
+	@Id
+	int IdVeterinaria;
+	String nombre;
+	String direccion;
+	long telefono;
+	
+}
+
+

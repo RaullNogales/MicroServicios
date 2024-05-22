@@ -1,0 +1,27 @@
+package com.mx.responsables.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.mx.responsables.model.Responsable;
+import com.mx.responsables.service.ResponsablesService;
+
+@RestController
+@RequestMapping("api/responsable")
+@CrossOrigin
+public class ResponsablesWS {
+
+	@Autowired
+	ResponsablesService resServ;
+	
+	@GetMapping("listar")
+	public List<Responsable> listar(){
+		return resServ.listar();
+	}
+	
+}

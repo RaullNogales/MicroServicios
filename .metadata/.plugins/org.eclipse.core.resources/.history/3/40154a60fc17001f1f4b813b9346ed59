@@ -1,0 +1,9 @@
+package com.mx.Clientes.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.mx.Clientes.model.Clientes;
+
+public interface ClientesRepository extends JpaRepository<Clientes, Integer>{
+
+}

@@ -1,0 +1,21 @@
+package com.mx.Clientes.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.mx.Clientes.model.Clientes;
+import com.mx.Clientes.repository.ClientesRepository;
+
+@Service
+public class ClientesService {
+
+	@Autowired
+	ClientesRepository cliDao;
+	
+	public List<Clientes> listar(){
+		return cliDao.findAll();
+	}
+	
+}

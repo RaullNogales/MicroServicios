@@ -1,0 +1,29 @@
+package com.mx.Veterinaria.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.mx.Veterinaria.model.Veterinaria;
+import com.mx.Veterinaria.repository.VeterinariaRepository;
+
+@Service
+public class VeterinariaService {
+
+	@Autowired
+	VeterinariaRepository vetDao;
+	
+	public List<Veterinaria> listar(){
+		return vetDao.findAll();
+	}
+	
+	public Object buscar(Veterinaria veterinaria) {
+		if(vetDao.existsById(veterinaria.getIdVeterinaria())) {
+			return vetDao.findById(veterinaria.getIdVeterinaria());
+		}
+		else
+			return "NO HAY REGISTRO CON ESE ID";
+	}
+	
+}

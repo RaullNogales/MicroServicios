@@ -1,0 +1,5 @@
+package com.mx.Veterinaria.repository;
+
+public interface VeterinariaRepository {
+
+}

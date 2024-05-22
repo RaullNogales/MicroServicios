@@ -1,0 +1,10 @@
+package com.mx.Clientes.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="CLIENTES")
+public class Clientes {
+
+}

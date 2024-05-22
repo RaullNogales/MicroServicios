@@ -1,0 +1,6 @@
+package com.mx.Veterinaria.model;
+
+@Entity
+public class Veterinaria {
+
+}

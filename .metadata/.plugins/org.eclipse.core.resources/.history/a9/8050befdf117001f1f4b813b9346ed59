@@ -1,0 +1,13 @@
+package com.mx.Veterinaria.Service;
+
+import com.mx.Veterinaria.model.Veterinaria;
+
+public class VeterinariaService {
+
+	Veterinaria veterinaria1 = new Veterinaria(1, "Veterinaria Central", "Calle Principal 123", 5551234567L);
+    Veterinaria veterinaria2 = new Veterinaria(2, "Veterinaria del Norte", "Avenida Norte 456", 5552345678L);
+    Veterinaria veterinaria3 = new Veterinaria(3, "Veterinaria del Sur", "Boulevard Sur 789", 5553456789L);
+    Veterinaria veterinaria4 = new Veterinaria(4, "Veterinaria del Este", "Carrera Este 101", 5554567890L);
+    Veterinaria veterinaria5 = new Veterinaria(5, "Veterinaria del Oeste", "Calle Oeste 202", 5555678901L);
+	
+}

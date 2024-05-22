@@ -1,0 +1,9 @@
+package com.mx.responsables.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.mx.responsables.model.Responsable;
+
+public interface ResponsablesRepository extends JpaRepository<Responsable, Integer>{
+
+}

@@ -1,0 +1,23 @@
+package com.mx.responsables.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.mx.responsables.model.Responsable;
+import com.mx.responsables.repository.ResponsablesRepository;
+
+@Service
+public class ResponsablesService {
+
+	@Autowired
+	ResponsablesRepository resDao;
+	
+	public List<Responsable> listar(){
+		return resDao.findAll();
+	}
+	
+	
+	
+}
