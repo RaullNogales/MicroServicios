@@ -1,5 +1,6 @@
 package com.mx.mascotas.entity;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,8 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ClientesModelo {
 
-	int IdCliente;
-	String nombre;
-	String direccion;
-	long contacto;
+	private int IdCliente;
+	private String nombre;
+	private String direccion;
+	private long contacto;
 }

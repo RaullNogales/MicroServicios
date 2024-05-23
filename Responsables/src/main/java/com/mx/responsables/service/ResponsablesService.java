@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.mx.responsable.entity.Veterinaria;
+import com.mx.responsables.feignClient.VeterinariaFeign;
 import com.mx.responsables.model.Responsable;
 import com.mx.responsables.repository.ResponsablesRepository;
 
@@ -14,6 +16,9 @@ public class ResponsablesService {
 
 	@Autowired
 	ResponsablesRepository resDao;
+	
+	@Autowired
+	VeterinariaFeign fgVet;
 	
 	public List<Responsable> listar(){
 		return resDao.findAll();
@@ -32,8 +37,17 @@ public class ResponsablesService {
 			return "ID YA EXISTENTE";
 		}
 		else {
-			resDao.save(responsable);
-			return "REGISTRO GUARDADO CON EL ID "+responsable.getIdResponsable();
+			
+			
+			List<Veterinaria> listaV = fgVet.listar();
+			for(Veterinaria vet : listaV) {
+				if(responsable.getIdVeterinaria()==vet.getIdVeterinaria()) {
+					resDao.save(responsable);
+					return "REGISTRO GUARDADO CON EL ID "+responsable.getIdResponsable();
+				}
+			}
+			
+			return "NO SE PUEDE GUARDAR EL REGISTRO DADO QUE NO EXISTE UNA VETERINARIA CON ESE ID";
 		}	
 	}
 	
@@ -55,6 +69,23 @@ public class ResponsablesService {
 		else
 			return "SIN REGISTRO EXISTENTE";
 	}
+	
+	
+	//_-------------------
+	
+		public List<Veterinaria> listarV(){
+			return fgVet.listar();
+		}
+		
+		public Veterinaria buscarV(Responsable res){
+			List<Veterinaria> listaV = fgVet.listar();
+			for(Veterinaria vet : listaV) {
+				if(res.getIdVeterinaria()==vet.getIdVeterinaria()) {
+					return vet;
+				}
+			}
+			return null;
+		}
 	
 	
 }

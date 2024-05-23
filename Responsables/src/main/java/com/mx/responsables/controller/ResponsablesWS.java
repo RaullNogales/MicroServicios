@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mx.responsable.entity.Veterinaria;
 import com.mx.responsables.model.Responsable;
 import com.mx.responsables.service.ResponsablesService;
 
@@ -44,6 +45,18 @@ public class ResponsablesWS {
 	@PostMapping("eliminar")
 	public String eliminar(@RequestBody Responsable responsable) {
 		return resServ.eliminar(responsable);
+	}
+	
+	//_----------
+	
+	@GetMapping("listarV")
+	public List<Veterinaria> listarV(){
+		return resServ.listarV();
+	}
+	
+	@GetMapping("buscarV")
+	public Veterinaria buscarV(@RequestBody Responsable responsable){
+		return resServ.buscarV(responsable);
 	}
 	
 }
